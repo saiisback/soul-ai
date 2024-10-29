@@ -1,24 +1,19 @@
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
-import { GoogleGeminiEffect } from '@/components/ui/google-gemini-effect';
-import { useMotionValue } from 'framer-motion';
+"use client";
+
+import Hero from "@/components/hero";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 export default function Home() {
-  // Initialize an array of MotionValues for path lengths
-  const pathLengths = [
-    useMotionValue(0),
-    useMotionValue(0),
-    // Add additional MotionValues if needed
-  ];
-
-  return (
-    <>
-      <BackgroundGradientAnimation />
-      <GoogleGeminiEffect
-        pathLengths={pathLengths} // Required array of MotionValue objects
-        title="Gemini Animation" // Optional: Set a custom title
-        description="An animated SVG effect with path length control" // Optional: Set a custom description
-        className="custom-gemini-class" // Optional: Additional CSS class
-      />
-    </>
-  );
+    return (
+        <>
+            <div className=" relative">
+                <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]">
+                    <BackgroundGradientAnimation />
+                </div>
+                <div className="">
+                    <Hero />
+                </div>
+            </div>
+        </>
+    );
 }

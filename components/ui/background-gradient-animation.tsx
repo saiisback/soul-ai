@@ -1,16 +1,18 @@
-"use client";
+
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
-  secondColor = "221, 74, 255",
-  thirdColor = "100, 220, 255",
-  fourthColor = "200, 50, 50",
-  fifthColor = "180, 180, 50",
-  pointerColor = "140, 100, 255",
+  gradientBackgroundStart = "rgb(255, 218, 185)", // Peach background start
+gradientBackgroundEnd = "rgb(255, 182, 155)",   // Lighter peach end
+
+firstColor = "255, 248, 220",                   // Yellowish white
+secondColor = "222, 49, 99",                    // Cherry red
+thirdColor = "165, 42, 42",                     // Brown shade
+fourthColor = "255, 228, 121",                  // Dull yellow
+fifthColor = "255, 160, 122",                   // Light salmon to match the palette
+pointerColor = "255, 255, 255",                 // White pointer
+
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -115,7 +117,7 @@ export const BackgroundGradientAnimation = ({
       <div
         className={cn(
           "gradients-container h-full w-full blur-lg",
-          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
+          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(30px)]"
         )}
       >
         <div
